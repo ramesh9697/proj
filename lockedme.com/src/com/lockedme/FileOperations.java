@@ -4,18 +4,18 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Scanner;
 
-public class FileOperations {
+public class FileOperations  {
 	
 	public static void createMainFolder()
 	{
 	
 		Scanner sc=new Scanner(System.in);
-		System.out.println("enter the path where u want create directory");
+		System.out.println("\nenter the path where u want create directory\n");
 		String path=sc.nextLine();
 		File f1=new File(path);
 		if(f1.exists())
 		{
-			System.out.println("Directory already exists.....");
+			System.out.println("Directory already exists.....\n");
 		}else
 		{
 			System.out.println("Directory doesnt exists creating new directory");
@@ -34,32 +34,37 @@ public class FileOperations {
 	public static void displayAllFiles()
 	{
 		Scanner s=new Scanner(System.in);
-		System.out.println("enter the folder path to display all files in sorted order");
+		System.out.println("\nenter the folder path to display all files in unsorted order");
 		String path=s.next();
 		File f=new File(path);
-		if(f.isDirectory())
+		if(f.exists())
 		{
 			File[] files=f.listFiles();
-			System.out.println("all the files including folders");
+			System.out.println("all the files including folders\n");
 			System.out.println("-----------------------------------");
+			if(files.length==0)
+			{
+				System.out.println("folder empty");
+			}
 			for(File file:files)
 			{
 				System.out.println(file.getName());
+				
 			}
-			FileFilter fileFilter=new FileFilter()
+			/*FileFilter fileFilter=new FileFilter()
 					{
 				public boolean accept(File file)
 				{
 					return !file.isDirectory();
 				}
 					};
-					files=f.listFiles(fileFilter);
+					files=f.listFiles(fileFilter);*/
 					System.out.println("\nAfter sorting by name");
 					 
 			Arrays.sort(files,new Comparator<Object>()
 					{
 
-				@Override
+			
 				public int compare(Object f1, Object f2) {
 				
 					 	return((File)f1).getName().compareTo(((File)f2).getName());
@@ -69,6 +74,9 @@ public class FileOperations {
 			{
 				System.out.println(file.getName());
 			}
+		}
+		else {
+			System.out.println("directory doesnot exits");
 		}
 		s.close();
 			
@@ -117,7 +125,7 @@ public class FileOperations {
 			File f=new File(fil);
 		 if(f.delete())
 		 {
-			 System.out.println(f+"\nfile got deleted");
+			 System.out.println(f +"\n file got deleted");
 		 }
 		 else 
 		 {
@@ -153,7 +161,7 @@ public class FileOperations {
 				{
 					String filename=list[i];
 					if(filename.equalsIgnoreCase(f)) {
-						System.out.println(f+"found");
+						System.out.println(f+"\n found");
 						flag=1;
 					}
 				}

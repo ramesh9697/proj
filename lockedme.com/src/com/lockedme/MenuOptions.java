@@ -8,11 +8,10 @@ public static void welcomeScreen(String appName,String developerName)
 	System.out.println(name);
 	String functions="You can use this application to :-\n"
 			+"Retrieve all the file names in the \"Main\"  Folder\n"
-			+"search,add or delete files  in \\\"Main\\\"  Folder\n"
+			+"search,add or delete files  in \"Main\"  Folder\n"
 			+"\n***********Please be careful to ensure the correct file name"
 			+ " is provided for searching or deleting the files";
-	System.out.println(functions);
-	
+	System.out.println(functions);	
 }
 	public static void displayMenu()
 	{
@@ -22,6 +21,7 @@ public static void welcomeScreen(String appName,String developerName)
 				+"enter option 3 for exit\n";
 		System.out.println(menu);
 }
+
 	public static void displayMenuOption() {
 		String fileMenu="\"Enter the file handling operations\"\r\n"
 				+ "		\"option 1 for creating folder\"\r\n"

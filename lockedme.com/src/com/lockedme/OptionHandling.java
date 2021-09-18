@@ -1,10 +1,11 @@
 
+
 package com.lockedme;
 import java.util.Scanner;
 
 public class OptionHandling 
 {
-	public static void handlingOptions()
+	public static void handlingOptions ()
 	{
 		Scanner sc=new Scanner(System.in);
 		MenuOptions.displayMenu();
@@ -37,7 +38,7 @@ public class OptionHandling
 				//searchFile();
 				break;
 			case 5:
-				OptionHandling.handlingOptions();
+	                 handlingOptions();
 				break;
 			default:
 				System.out.println("entered wrong options");
@@ -45,14 +46,14 @@ public class OptionHandling
 			}break;
 		case 3:
 			System.out.println("Program exited successfully.");
-			sc.close();
+			//sc.close();
 			System.exit(0);
 			break;
 				
 			}
 		sc.close();
 		}
-;		
+		
 		
 	}
 	
